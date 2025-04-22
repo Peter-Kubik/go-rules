@@ -1232,6 +1232,7 @@ def go_repo(module: str, version:str='', download:str=None, name:str=None, insta
             licences = licences,
             patch = patch,
             strip = strip,
+            deps = deps,
         )
 
     srcs = {
