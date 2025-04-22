@@ -96,7 +96,7 @@ var opts = struct {
 		BuildTags        []string `long:"build_tag" description:"Any build tags to apply to the build"`
 		Subrepo          string   `long:"subrepo" description:"The subrepo root to output into"`
 		Labels           []string `long:"label" description:"Additional labels to attach to subrepo targets"`
-		ModuleDeps       []string `long:"deps" description:"Additional dependencies""`
+		ModuleDeps       []string `long:"deps" description:"Additional dependencies"`
 		Args             struct {
 			Requirements []string `positional-arg-name:"requirements" description:"Any module requirements not included in the go.mod"`
 		} `positional-args:"true"`
