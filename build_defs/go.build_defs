@@ -1232,7 +1232,6 @@ def go_repo(module: str, version:str='', download:str=None, name:str=None, insta
             licences = licences,
             patch = patch,
             strip = strip,
-            deps = deps,
         )
 
     srcs = {
@@ -1260,7 +1259,7 @@ def go_repo(module: str, version:str='', download:str=None, name:str=None, insta
         "find $SRCS_DOWNLOAD -name BUILD -delete",
         f"mkdir -p $(dirname {pkgRoot})",
         f"mv $SRCS_DOWNLOAD {pkgRoot}",
-        f"$TOOL generate {modFileArg} --module {module} --version '{version}' {build_tag_args} {label_args} --src_root={pkgRoot} --third_part_folder='{third_party_path}' --subrepo '{pkg_name}/{subrepo_name}' --deps {deps} {install_args} {requirements}",
+        f"$TOOL generate {modFileArg} --module {module} --version '{version}' {build_tag_args} {label_args} --src_root={pkgRoot} --third_part_folder='{third_party_path}' --subrepo '{pkg_name}/{subrepo_name}' {install_args} {requirements}",
         f"mv {pkgRoot} $OUT",
     ]
     cmd = " && ".join(cmds)
